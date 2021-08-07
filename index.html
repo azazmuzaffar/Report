@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+  	<meta content=" width=device-width, initial-scale=1" name="viewport">
+  	<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+      <link href="./images/favicon.png" rel="icon" sizes="32x32" type="image/gif">
+  	<title>Status Report PDF - COA Implementation</title>
+
+    <!-- >>>>> Style <<<<< -->
+    <style>
+
+        /* >>>>>> Common <<<<<<*/
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+        .status--report{
+            padding: 60px 0%;
+        }
+        .status--report .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            height: fit-content;
+            margin-left: auto;
+        }
+        @media (min-width: 768px) {
+            .status--report .container {
+                width: 750px;
+            }
+        }
+        @media (min-width: 992px) {
+            .status--report .container {
+                width: 970px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .status--report .container {
+                width: 1170px;
+            }
+        }
+        table{
+            width: 100%;
+            margin: 30px 0px;
+            border-collapse: collapse;
+        }
+        td, th {
+            text-align: left;
+            padding: 6px 8px;
+        }
+        thead th{
+            background: #179BD7;
+            color: white;
+        }
+        tbody th{
+            border: 2px solid black;
+        }
+        td{
+            border: 2px solid black;
+        }
+
+        /* >>>>>> Report INFO <<<<<<*/
+        .report--info{
+            margin-bottom: 0;
+        }
+        .report--info th{
+            background: unset;
+            width: 25%;
+            color: black;
+            text-align: center;
+        }
+        .report--info th.dark--blue{
+            background: #03597F;
+            color: white;
+        }
+        .report--info th.left{
+            text-align: left;
+            padding-top: 0;
+        }
+        .report--info th.left .--center--{
+            text-align: left;
+            display: table;
+            margin: 0 auto;
+        }
+        .report--info th.left .--center-- span{
+            color: #179BD7;
+        }
+        .report--info th.left .--center-- a{
+            text-decoration: none;
+            color: unset;
+        }
+        .report--info th img{
+            width: 90%;
+            height: auto;
+        }
+
+        /* >>>>>> MAIN TABLE HEADER <<<<<<*/
+        .--main--header--{
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+        .--main--header-- thead tr th.green{
+            background: #009245;
+        }
+        .--main--header-- thead tr th.blue{
+            background: #179BD7;
+        }
+        .--main--header-- thead tr th.yellow{
+            background: #FFBF00;
+        }
+        .--main--header-- thead tr th.blue{
+            background: #FF5B05;
+        }
+
+        /* >>>>>> SIMPLE LINE BREAK <<<<<<*/
+        hr{
+            border-color: black;
+        }
+
+        /* >>>>>> TABLE > PROJECT DETAILS  <<<<<<*/
+        .project--details thead tr th{
+            text-align: left;
+        }
+
+        /* >>>>>> TABLE > PROJECT STATUS NOTES  <<<<<<*/
+        .project--status--notes td{
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* >>>>>> TABLE > BUDGET  <<<<<<*/
+        .--budget-- tbody th{
+            text-align: left;
+        }
+
+        /* >>>>>> TABLE > ASSIGNMENTS  <<<<<<*/
+        .--assignements-- tbody th{
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>	
+
+    <div class="status--report">
+        <div class="container">
+
+            <!-- >>>>>>>>>>>>>>>>>> REPORT INFO <<<<<<<<<<<<<<<<< -->
+
+            <table class="report--info">
+                <thead>
+                    <tr>
+                        <th class="dark--blue">
+                            Project Status Report<br>
+                            <br>Community Options<br>
+                            Australia - Implementation
+                        </th>
+                        <th>
+                            <img src="./images/logo.jpg" alt="">
+                        </th>
+                        <th class="left">
+                            <span class="--center--">
+                                Destined | Level 6, 8 West Street,<br>
+                                North Sydney 2060 PO Box 6329<br>
+                                North Sydney NSW 2059
+                            </span>
+                        </th>
+                        <th class="left">
+                            <span class="--center--">
+                                <span>P:</span> <a href="tel:61283111222"> + 61 2 8311 1222</a><br>
+                                <span>E:</span> <a href="mailto:info@destined.com.au"> info@destined.com.au</a><br>
+                                <span>W:</span> <a href="https://destined.com.au/"> destined.com.au</a>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- >>>>>>>>>>>>>>>>>> ALL TABLE > MAIN HEADER <<<<<<<<<<<<<<< -->
+
+            <table class="--main--header--">
+                <thead>
+                    <tr>
+                        <th class="blue">PROJECT STATUS:</th>
+                        <th class="green">OVERALL</th>
+                        <th class="blue">OTHER STATUS:</th>
+                        <th class="yellow">SCOPE</th>
+                        <th class="orange">FINANCIALS</th>
+                        <th class="green">SCHEDULE</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <hr>
+
+            <!-- >>>>>>>>>>>>>>>>>> TABLE > PROJECT DETAILS <<<<<<<<<<<<<<< -->
+
+            <table class="project--details">
+                <thead>
+                  <tr>
+                    <th colspan="2">PROJECT DETAILS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Customer</td>
+                    <td>Community Options Australia</td>
+                  </tr>
+                  <tr>
+                    <td>Project</td>
+                    <td>Manager Martin Dougall</td>
+                  </tr>
+                  <tr>
+                    <td>Project</td>
+                    <td>Start Date 2021-05-17</td>
+                  </tr>
+                  <tr>
+                    <td>Project</td>
+                    <td>End Date 2021-10-31</td>
+                  </tr>
+                  <tr>
+                    <td>Project</td>
+                    <td>Stage In Progress</td>
+                  </tr>
+                  <tr>
+                    <td>Current</td>
+                    <td>Phase Development</td>
+                  </tr>
+                  <tr>
+                    <td>Currency</td>
+                    <td>AUD</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="project--status--notes">
+                <thead>
+                  <tr>
+                    <th>PROJECT STATUS NOTES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        MVP build has commenced with KHI -- need to final confirm MVP scope with customer in terms of what is possible to deliver by June 30
+                    </td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+
+              <!-- >>>>>>>>>>>>>>>>>> TABLE > BUDGET <<<<<<<<<<<<<<< -->
+
+              <table class="--budget--">
+                <thead>
+                  <tr>
+                    <th colspan="8">BUDGETS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Services Budget</th>
+                    <th>Services Billings</th>
+                    <th>Remaining Services Budget</th>
+                    <th>Pass Through Billings</th>
+                    <th>Planned Billable Hours</th>
+                    <th>Hours Billed</th>
+                    <th>Billed Remaining Billable Hours</th>
+                    <th>Non-Chargable Hours</th>
+                  </tr>
+                  <tr>
+                    <td>210,400.00</td>
+                    <td>0.00</td>
+                    <td>210,400.00</td>
+                    <td>0.00</td>
+                    <td>1,052.00</td>
+                    <td>51.00</td>
+                    <td>1,001.00</td>
+                    <td>0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- >>>>>>>>>>>>>>>>>> TABLE > ASSIGNMENT <<<<<<<<<<<<<<< -->
+
+              <table class="--assignements--">
+                <thead>
+                  <tr>
+                    <th colspan="8">ASSIGNMENTS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="3"></th>
+                    <th colspan="4">- - - - - - - - Hours - - - - - - - -</th>
+                    <th colspan="1"></th>
+                  </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Planned</th>
+                    <th>Scheduled</th>
+                    <th>Billable</th>
+                    <th>Non Billable</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td>Martin Dougall</td>
+                    <td>2021-05-17</td>
+                    <td>2021-10-18</td>
+                    <td>0.00</td>
+                    <td>54.00</td>
+                    <td>6.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Swati Sharma</td>
+                    <td>2021-05-17</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>200.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Tom Wong</td>
+                    <td>2021-05-17</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>110.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Tanya Anglin</td>
+                    <td>2021-05-17</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>56.00</td>
+                    <td>4.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+
+                  <tr>
+                    <td>Maaz Khan</td>
+                    <td>2021-05-17</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>54.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Tanya Anglin</td>
+                    <td>2021-05-17</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>192.00</td>
+                    <td>9.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Tanya Anglin</td>
+                    <td>2021-05-18</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>192.00</td>
+                    <td>26.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td>Syed Arbab</td>
+                    <td>2021-05-18</td>
+                    <td>2021-09-06</td>
+                    <td>0.00</td>
+                    <td>192.00</td>
+                    <td>6.00</td>
+                    <td>0.00</td>
+                    <td>Scheduled</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Totals</td>
+                    <td>0.00</td>
+                    <td>1050.00</td>
+                    <td>51.00</td>
+                    <td>0.00</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            <!-- >>>>>>>>>>>>>>>>>> TABLE > BILLABLE TIMECARDS <<<<<<<<<<<<<<< -->
+
+              <table class="--timecards--">
+                <thead>
+                  <tr>
+                    <th colspan="13">BILLABLE TIMECARDS (Basic Info with Daily Notes, Sub-Totalled by Resource)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Resource</th>
+                    <th>Billable Hrs</th>
+                    <th>Billable Rate</th>
+                    <th>Mon Hrs</th>
+                    <th>Tues Hrs</th>
+                    <th>Wed Hrs</th>
+                    <th>Thurs Hrs</th>
+                    <th>Fri Hrs</th>
+                    <th>Sat Hrs</th>
+                    <th>Sun Hrs</th>
+                  </tr>
+                  <tr>
+                    <td>2021-05-17</td>
+                    <td>2021-05-23</td>
+                    <td>Approved</td>
+                    <td>Fahad Patel</td>
+                    <td>9.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>3.00</td>
+                    <td>3.00</td>
+                    <td>0.00</td>
+                    <td>3.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Tues Notes</td>
+                    <td colspan="11">Changes</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Wed Notes</td>
+                    <td colspan="11">Changes</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Fri Notes</td>
+                    <td colspan="11">Changes</td>
+                  </tr>
+                  <tr>
+                    <td>2021-05-17</td>
+                    <td>2021-05-23</td>
+                    <td>Approved</td>
+                    <td>Manal Gulfam</td>
+                    <td>26.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>6.50</td>
+                    <td>6.50</td>
+                    <td>6.50</td>
+                    <td>6.50</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Tues Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Wed Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Thurs Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Fri Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td>2021-05-17</td>
+                    <td>2021-05-23</td>
+                    <td>Approved</td>
+                    <td>Martin Dougall</td>
+                    <td>6.00</td>
+                    <td>0.00</td>
+                    <td>2.00</td>
+                    <td>1.00</td>
+                    <td>1.00</td>
+                    <td>1.50</td>
+                    <td>0.50</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Mon Notes</td>
+                    <td colspan="11">Planning for implementation phase plus check in calls with onshore and offshore teams</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Tues Notes</td>
+                    <td colspan="11">Check in calls with onshore and offshore teams</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Wed Notes</td>
+                    <td colspan="11">Check in calls with onshore and offshore teams</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Thurs Notes</td>
+                    <td colspan="11">Check in calls with team. Weekly governance call with client</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Fri Notes</td>
+                    <td colspan="11">Check in calls with onshore and offshore teams</td>
+                  </tr>
+                  <tr>
+                    <td>2021-05-17</td>
+                    <td>2021-05-23</td>
+                    <td>Approved</td>
+                    <td>Syed Arbab</td>
+                    <td>6.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>1.00</td>
+                    <td>2.00</td>
+                    <td>1.50</td>
+                    <td>1.50</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Tues Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Wed Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Thurs Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Fri Notes</td>
+                    <td colspan="11">Bulid</td>
+                  </tr>
+                  <tr>
+                    <td>2021-05-17</td>
+                    <td>2021-05-23</td>
+                    <td>Approved</td>
+                    <td>Tanya Anglin</td>
+                    <td>4.00</td>
+                    <td>0.00</td>
+                    <td>0.50</td>
+                    <td>0.50</td>
+                    <td>2.00</td>
+                    <td>1.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Mon Notes</td>
+                    <td colspan="11">Team stand up and review with Rose</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Tues Notes</td>
+                    <td colspan="11">s stand up with Jamie and Rose, internal with Tom and Martin, Maaz</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Wed Notes</td>
+                    <td colspan="11">refining user stories and meeting with Maaz for 1.5 to review</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Thurs Notes</td>
+                    <td colspan="11">escalation meeting with Tom and Martin and Maaz to review</td>
+                  </tr>
+                  <tr>
+                    <td>2021-05-24</td>
+                    <td>2021-05-30</td>
+                    <td>Saved</td>
+                    <td>Tanya Anglin</td>
+                    <td>0.50</td>
+                    <td>0.00</td>
+                    <td>0.50</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Hours for Fahad Patel</td>
+                    <td>9.00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Hours for Manal Gulfam</td>
+                    <td>26.00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Hours for Martin Dougall</td>
+                    <td>6.00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Hours for Syed Arbab</td>
+                    <td>6.00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Hours for Tanya Anglin</td>
+                    <td>4.50</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">Total Billable Hours</td>
+                    <td>51.50</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              
+        </div>
+    </div>
+
+</body>
+</html>    
+
